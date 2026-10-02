@@ -24,28 +24,28 @@ def main():
     print("\nTest Diccionario")
     dict = {"nombre":"Leo","edad":26}
     print("Obtener key TEST")
-    print(getKey(dict,"TEST"))
+    print(get_key(dict,"TEST"))
     print("Obtener key Leo")
-    print(getKey(dict,"nombre"))
+    print(get_key(dict,"nombre"))
     
     print("----------------------------")  
     print("\nTest input division")
     a =  "test"
     b = 321
     print("\ndiviendo: ", a," por ", b)
-    print(divisionValue(a,b))
+    print(division_value(a,b))
     a =  2
     b = 0
     print("\ndiviendo: ", a," por ", b)
-    print(divisionValue(a,b))
+    print(division_value(a,b))
     a =  1
     b = 2
     print("\ndiviendo: ", a," por ", b)
-    print(divisionValue(a,b))
+    print(division_value(a,b))
     
     print("----------------------------")  
     print("\nTest abrir archivo")
-    abrirArchivo("./","test.txt") 
+    abrir_archivo("./","test.txt") 
     
  
 def division(a,b):
@@ -55,7 +55,7 @@ def division(a,b):
     except ZeroDivisionError:
         return "ZeroDivisionError: No se puede dividir por cero"
 
-def divisionValue(a,b):
+def division_value(a,b):
     try: 
         return int(a)/int(b)
     except ValueError:
@@ -70,13 +70,13 @@ def suma(a,b):
     except TypeError:
         return "TypeError: Los valores a sumar deben ser numericos"
 
-def getKey(dict,k):
+def get_key(dict,k):
     try:
         return dict[k]
     except KeyError:
         return "KeyError: key invalida"
     
-def abrirArchivo(ruta,nombre): 
+def abrir_archivo(ruta,nombre): 
     try:
         open(ruta+nombre)
     except FileNotFoundError:
@@ -87,7 +87,7 @@ def abrirArchivo(ruta,nombre):
             return "No se pudo crear el archivo en la ruta ",ruta
         else:
             print("Archivo creado, volviendo a abrir...")
-            abrirArchivo(ruta,nombre)
+            abrir_archivo(ruta,nombre)
     else:
         print("Archivo ",ruta+nombre," encontrado")
 
